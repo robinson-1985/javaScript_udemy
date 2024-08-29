@@ -17,8 +17,9 @@ console.log(umaString + ' em um lindo dia');
 console.log(`${umaString} em um lindo dia`);
 
 // posso saber o indice de um caractere específico
-console.log(umaString.indexOf('texto')); // -1
-console.log(umaString.indexOf('o', 3)); // 4
+console.log(umaString.indexOf('a')); // mostra o primiero índice da letra a
+console.log(umaString.indexOf('o', 3)); // mostra o índice da letra o a partir do índice 3
+console.log(umaString.lastIndexOf('o')); // mostra o último índice da letra o
 
 // expresssões regulares
 console.log(umaString.match(/[a-z]/g)); // [ 'm', 't', 'e', 'x', 't', 'o' ]
