@@ -1,5 +1,5 @@
 function falaNome() {
-//   console.log(nome);
-// }
+  console.log(nome);
+}
 
-// falaNome();
+falaNome();
