@@ -137,16 +137,56 @@
 // console.log(pessoa1);
 // console.log(pessoa2);
 
-// 
+// Alterando o endereço de memória de um objeto
+// Isso é possível porque os objetos são passados por referência
+// Quando criamos um novo objeto, ele recebe um novo endereço de memória
+// e não altera o objeto original
+
+// function Pessoa(nome, sobrenome) {
+//   this.nome = nome;
+//   this.sobrenome = sobrenome;
+// };
+
+// //pesso1 = (ENDERECOMEMORIA) -> 'VALOR'
+// const pessoa1 = new Pessoa('João', 'Silva');
+// pessoa1.nome = 'Outra coisa';
+// const pessoa2 = new Pessoa('Maria', 'Oliveira');
+
+// console.log(pessoa1);
+// console.log(pessoa2);
+
+// Como travar um objeto para que ele não possa ser alterado
+
+
+// function Pessoa(nome, sobrenome) {
+//   this.nome = nome;
+//   this.sobrenome = sobrenome;
+// };
+
+// const pessoa1 = new Pessoa('João', 'Silva');
+// Object.freeze(pessoa1); // Isso impede que o objeto seja alterado
+// pessoa1.nome = 'Outra coisa';
+// const pessoa2 = new Pessoa('Maria', 'Oliveira');
+
+// console.log(pessoa1);
+// console.log(pessoa2);
+
+//Agora vamos travar todo o objeto, incluindo suas propriedades
+// Isso impede que o objeto e suas propriedades sejam alterados
+// Isso é útil quando queremos garantir que um objeto não será modificado acidentalmente
+// Isso é feito utilizando o Object.freeze()
+// Só que precisamos lembrar que ele trava tudo, inclusive as propriedades que são objetos
 
 function Pessoa(nome, sobrenome) {
   this.nome = nome;
   this.sobrenome = sobrenome;
+
+  Object.freeze(this); // Isso impede que o objeto e suas propriedades sejam alterados
 };
 
+// Tudo que for criado a partir dessa classe será imutável
 const pessoa1 = new Pessoa('João', 'Silva');
-pessoa1.nome = 'Outra coisa';
 const pessoa2 = new Pessoa('Maria', 'Oliveira');
+
 console.log(pessoa1);
 console.log(pessoa2);
-
